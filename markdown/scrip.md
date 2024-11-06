@@ -27,5 +27,3 @@ Speaker3: What’s more, you could go to the Lotus flowers Lake, where visitors 
 Speaker1: Lianhuashan Park, is a great place to visit. 
 Speaker2: Not only can you experience the history and culture here, but you can also enjoy the beautiful scenery. 
 Speaker3: If you feel tried after having learnt for a long time, let Lianhuashan Park be your great place to have a rest!  
-
-$ {a_n}=\frac{n*(n+1)}{2} $
