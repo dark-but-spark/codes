@@ -27,13 +27,13 @@ class INPUT(ctypes.Structure):
     _fields_ = [("type", ctypes.c_ulong),
                 ("input", _INPUT)]
 def main():
-    n=50
+    n=1024
     for i in range(n):
-        x=random.randint(-100,100)
+        x=1
         y=random.randint(-100,100)
-        inputs = []
-        inputs.append(INPUT(type=0, input=INPUT._INPUT(mi=MOUSEINPUT(dx=x, dy=y, mouseData=0, dwFlags=win32con.MOUSEEVENTF_MOVE, time=0, dwExtraInfo=None))))
+        inputs =[] 
+        inputs.append(INPUT(type=0, input=INPUT._INPUT(mi=MOUSEINPUT(dx=x, dy=x, mouseData=0, dwFlags=win32con.MOUSEEVENTF_MOVE, time=0, dwExtraInfo=None))))
         ctypes.windll.user32.SendInput(len(inputs), ctypes.byref(inputs[0]), ctypes.sizeof(INPUT))
-        time.sleep(1)
+        time.sleep(.1)
 
 main()
