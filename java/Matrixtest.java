@@ -98,7 +98,7 @@ class Matrix{
             throw new Exception("fuck multiply");
         else
         {
-            double res[][]= new double[this.row][that.colunm]
+            double res[][]= new double[this.row][that.colunm];
             for(int i=0;i<this.row;i++) for(int j=0;j<that.colunm;j++) for(int k=0;k<that.row;k++)
             {
                 res[i][j]+=this.a[i][k]*this.a[k][j];

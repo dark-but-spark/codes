@@ -4,7 +4,7 @@ using namespace std;
 const int N=1e5+10;
 int f[N];
 
-inline isBinary(int x)
+inline int isBinary(int x)
 {
     while(x)
     {
