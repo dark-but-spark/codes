@@ -101,7 +101,7 @@ class Matrix{
             double res[][]= new double[this.row][that.colunm];
             for(int i=0;i<this.row;i++) for(int j=0;j<that.colunm;j++) for(int k=0;k<that.row;k++)
             {
-                res[i][j]+=this.a[i][k]*this.a[k][j];
+                res[i][j]+=this.a[i][k]*that.a[k][j];
             }
             return new Matrix(this.row,that.colunm,res);
         }
@@ -118,14 +118,15 @@ class Matrix{
 }
 class Matrixtest{
     public static void main(String[] args) {
-        double a[][] = {{1, 2, 1}, {2, 2, 3}, {2, 2, 0}};
-        double b[][] = {{2}, {0}, {0}};
+        double a[][] = {{2,1,0,0}, {1,2,1,0}, {0,1,2,1},{0,0,1,2}};
+        double b[][] = {{2,-1,0,0}, {-1,2,-1,0}, {0,-1,2,-1},{0,0,-1,2}};
         double d[][] = {{2}, {0}, {5}};
+        double m[][]= new double[4][4];
         try 
         {
         Matrix A = new Matrix(a.length, a[0].length, a);
         Matrix B = new Matrix(b.length, b[0].length, b);
-        Matrix C = new Matrix("I",3);
+        Matrix C = new Matrix("I",4);
         Matrix D = new Matrix(d.length, d[0].length, d);
         Matrix E = new Matrix("I",2);
        
@@ -136,7 +137,7 @@ class Matrixtest{
             System.out.println("E=" + E.print());
             System.out.println("A+C="+A.plus(C).print());
             // System.out.println("A+E="+A.plus(E).print());
-            System.out.println("B+D="+B.plus(D).print());
+            // System.out.println("B+D="+B.plus(D).print());
             System.out.println("3*A="+A.multiply(3).print());
             System.out.println("A-C="+A.minus(C).print());
             System.out.println("B-D="+B.minus(D).print());
@@ -146,6 +147,20 @@ class Matrixtest{
             // System.out.println("B*A="+B.multiply(A).print());
             System.out.println("A^T="+A.T().print());
             System.out.println("B^T="+B.T().print());
+            for(int i=0;i<16;i++)
+            {
+                int x=i,k=0;
+                while(k<4)
+                {
+                    if(x%2==1) m[k][k]=1;
+                    else m[k][k]=-1;
+                    x>>=1;
+                    k+=1;
+                }
+                Matrix M= new Matrix(4,4,m);
+                System.out.println("M=" + M.print());
+                System.out.println("MAM="+M.multiply(A.multiply(M)).print());
+            }
             
         }
         catch (Exception e) 
