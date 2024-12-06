@@ -106,6 +106,15 @@ class Matrix{
             return new Matrix(this.row,that.colunm,res);
         }
     }
+    public Matrix T()
+    {
+        double res[][]=new double[this.colunm][this.row];
+        for(int i=0;i<this.colunm;i++) for(int j=0;j<this.row;j++)
+        {
+            res[i][j]=this.a[j][i];
+        }
+        return new Matrix(this.colunm,this.row,res);
+    }
 }
 class Matrixtest{
     public static void main(String[] args) {
@@ -131,10 +140,13 @@ class Matrixtest{
             System.out.println("3*A="+A.multiply(3).print());
             System.out.println("A-C="+A.minus(C).print());
             System.out.println("B-D="+B.minus(D).print());
-            System.out.println("A-D="+A.minus(D).print());
+            // System.out.println("A-D="+A.minus(D).print());
             System.out.println("A*C="+A.multiply(C).print());
             System.out.println("A*B="+A.multiply(B).print());
-            System.out.println("B*A="+B.multiply(A).print());
+            // System.out.println("B*A="+B.multiply(A).print());
+            System.out.println("A^T="+A.T().print());
+            System.out.println("B^T="+B.T().print());
+            
         }
         catch (Exception e) 
         {
