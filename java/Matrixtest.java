@@ -115,12 +115,87 @@ class Matrix{
         }
         return new Matrix(this.colunm,this.row,res);
     }
+    /* traditional way
+    public int order(int[] a)
+    {
+        int ans=1;
+        for(int i=0;i<a.length;i++) for(int j=i+1;j<a.length;j++)
+        {
+            if(a[i]>a[j]) ans*=-1;
+        }
+        return ans;
+    }
+    public double choose(int d,int[] f,int[] a )
+    {
+        if(d==this.row)
+        {
+            double ans=1;
+            for(int i=0;i<this.row;i++)
+            {
+                ans*=this.a[i][a[i]];
+            }
+            return order(a)*ans;
+        }
+        else
+        {
+            double ans=0;
+            for(int i=0;i<this.row;i++)
+            {
+                if(f[i]==0)
+                {
+                    f[i]=1;
+                    a[d]=i;
+                    ans+=choose(d+1,f,a);
+                    f[i]=0;
+                }
+            }
+            return ans;
+        }
+    }
+    */
+    public Matrix rowchange(int r_1,int x_1,int r_2,int x_2) throws CloneNotSupportedException // r_1=r_1*x_1+r_2*x_2
+    {
+        Matrix res= (Matrix) this.clone();
+        for(int i=0;i<this.colunm;i++)
+        {
+            res.a[r_1][i]=this.a[r_1][i]*x_1+this.a[r_2][i]*x_2;
+        }
+        return res;
+    }
+    public Matrix colunmchange(int c_1,int x_1,int c_2,int x_2) throws CloneNotSupportedException // c_1=c_1*x_1+c_2*x_2
+    {
+        Matrix res= (Matrix) this.clone();
+        for(int i=0;i<this.row;i++)
+        {
+            res.a[i][c_1]=this.a[i][c_1]*x_1+this.a[i][c_2]*x_2;
+        }
+        return res;
+    }
+    public double det() throws Exception
+    {
+        if(this.row!=this.colunm) 
+        {
+            throw new Exception("can't caculate det");
+        }
+        else
+        {
+            /*  traditional way
+            int n=this.row;
+            int f[]=new int[n];
+            int a[]=new int[n];
+            return choose(0,f,a);
+            */
+
+        }
+                return colunm;
+    }
 }
 class Matrixtest{
     public static void main(String[] args) {
         double a[][] = {{2,1,0,0}, {1,2,1,0}, {0,1,2,1},{0,0,1,2}};
         double b[][] = {{2,-1,0,0}, {-1,2,-1,0}, {0,-1,2,-1},{0,0,-1,2}};
         double d[][] = {{2}, {0}, {5}};
+        double f[][] = {{2,3},{4,5}};
         double m[][]= new double[4][4];
         try 
         {
@@ -129,6 +204,7 @@ class Matrixtest{
         Matrix C = new Matrix("I",4);
         Matrix D = new Matrix(d.length, d[0].length, d);
         Matrix E = new Matrix("I",2);
+        Matrix F= new Matrix(f.length,f[0].length,f);
        
             System.out.println("A=" + A.print());
             System.out.println("B=" + B.print());
@@ -161,6 +237,10 @@ class Matrixtest{
                 System.out.println("M=" + M.print());
                 System.out.println("MAM="+M.multiply(A.multiply(M)).print());
             }
+            System.out.println("detF="+F.det());
+            // System.out.println("detD="+D.det());
+            System.out.println("detE="+E.det());
+            
             
         }
         catch (Exception e) 
