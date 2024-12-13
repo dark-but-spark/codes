@@ -185,6 +185,7 @@ class Matrix{
             int a[]=new int[n];
             return choose(0,f,a);
             */
+           
 
         }
                 return colunm;
