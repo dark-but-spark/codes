@@ -17,6 +17,6 @@ int main()
         sum+=dx*.5*(f(x+dx)+f(x));
         x=x+dx;
     }
-    printf("%lf",sum-7.0/3);
+    printf("%lf",sum);
         
 }
