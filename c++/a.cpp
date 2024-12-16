@@ -124,8 +124,10 @@ int main()
     }
     for(int j=1;j<L;j++) for(int i=1;i+(1<<j)-1<=n;i++)
     {
-        mx[j][i]= a[mx[j-1][i]]>a[mx[j-1][i+(1<<(j-1))]]? mx[j-1][i]:mx[j-1][i+(1<<(j-1))];
-        mn[j][i]= a[mn[j-1][i]]<a[mn[j-1][i+(1<<(j-1))]]? mn[j-1][i]:mn[j-1][i+(1<<(j-1))];
+        mx[j][i]= a[mx[j-1][i]]>a[mx[j-1][i+(1<<(j-1))]]?
+         mx[j-1][i]:mx[j-1][i+(1<<(j-1))];
+        mn[j][i]= a[mn[j-1][i]]<a[mn[j-1][i+(1<<(j-1))]]? 
+        mn[j-1][i]:mn[j-1][i+(1<<(j-1))];
 
     }
     
@@ -134,8 +136,10 @@ int main()
     for(int i=1;i<=n;i++) for(int j=i;j<=n;j++)
     {
         int s=logn[j-i+1];
-        sum+=abs((a[mx[s][i]]>a[mx[s][j-(1<<s)+1]]? mx[s][i]:mx[s][j-(1<<s)+1])
-                -(a[mn[s][i]]<a[mn[s][j-(1<<s)+1]]? mn[s][i]:mn[s][j-(1<<s)+1]));
+        sum+=abs((a[mx[s][i]]>a[mx[s][j-(1<<s)+1]]? 
+                mx[s][i]:mx[s][j-(1<<s)+1])
+                -(a[mn[s][i]]<a[mn[s][j-(1<<s)+1]]? 
+                mn[s][i]:mn[s][j-(1<<s)+1]));
 
         // node _=find(1,1,n,i,j);
         // sum+=abs(_.mxid-_.mnid);
