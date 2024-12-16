@@ -36,6 +36,7 @@ int main()
 {
     // freopen("result.out", "w", stdout);
     int cnt=0;
+    printf("%lf \n",k());
     while (h>0)
     {
         double dv = a(v) * dt;
