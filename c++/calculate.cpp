@@ -1,17 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
-double e=1e-9,dx=.5;
-double a=2,b=4;
 
 
-inline double f(double x)
+// inline double f(double x)
+// {
+//     return 1.0/((x-1)*(x-1));
+// }
+inline double f(double x,double y)
 {
-    return 1.0/((x-1)*(x-1));
+    return 2*x*y+2*y;
 }
-
+inline double y(double x)
+{
+    return exp(x*x+2*x+log(3));
+}
 int main()
 {
-    double x=a,sum=0;
     // while(x+dx<=b+e)
     // {
     //     sum+=dx*.5*(f(x+dx)+f(x));
@@ -25,16 +29,15 @@ int main()
     //     x+=2*dx;
     // }
     // printf("%lf",sum);
-    sum=0;
-    int n=2;
-    while(1)
+    double dx=1e-3;
+    double x=0,y1=3;
+
+    int n=10000000;
+    while(n--)
     {
-        sum=0;
-        n*=2;
-        for(int i=1;i<=n;i++)
-        {
-            sum+=(i*sin(1+i/n)*sin(1+i/n))/(n*n);
-        }
-        printf("%d %lf\n",n,sum);
+        y1=y1+f(x,y1)*dx;
+        x+=dx;
+        printf( "%lf %lf %lf %lf\n",x,y1,y(x),y(x)-y1);
+
     }
 }

@@ -16,6 +16,9 @@ class BFSForPush{
             int[] n=queuePeople[lP];
             lP++;
             for(int i=0;i<4;i++)
+            {
+                
+            }
             
         }
     }
