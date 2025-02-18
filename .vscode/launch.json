@@ -6,23 +6,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Matrixtest",
+            "name": "Main",
             "request": "launch",
-            "mainClass": "Matrixtest",
-            "projectName": "codes_51b55a2c"
-        },
-        {
-            "type": "java",
-            "name": "main",
-            "request": "launch",
-            "mainClass": "main",
-            "projectName": "codes_51b55a2c"
-        },
-        {
-            "type": "java",
-            "name": "hello",
-            "request": "launch",
-            "mainClass": "hello",
+            "mainClass": "Main",
             "projectName": "codes_51b55a2c"
         },
         {
