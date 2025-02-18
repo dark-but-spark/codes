@@ -3,5 +3,5 @@ public class  hello{
     {
         System.out.print("hello");
     }
-
+    /* sjdhdd/* */ /*时代的、*/
 }
