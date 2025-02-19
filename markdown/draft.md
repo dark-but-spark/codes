@@ -43,3 +43,7 @@ MAM^-1=\left[
     \end{matrix} 
 \right]
 $$
+
+$$
+g=\frac{4\pi^{a_n}l}{T_i^2}=\sqrt{x^2+h}+\alpha+\beta+\phi+\Phi
+$$
