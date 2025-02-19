@@ -45,5 +45,14 @@ MAM^-1=\left[
 $$
 
 $$
-g=\frac{4\pi^{a_n}l}{T_i^2}=\sqrt{x^2+h}+\alpha+\beta+\phi+\Phi
+g=\frac{4\pi^{a_n}l}{T_i^2}=\sqrt{x^2+h}+\alpha+\beta+\phi+\Phi+{{\sigma x}\over{\delta y}}*\Delta z
+$$
+
+$$
+\sqrt[6]{x^2}=
+\sum_1^{x^{1\over3}} \int_{-\infty}^\infty
+\iint
+\int\int\int\int
+\iiint
+\prod
 $$
