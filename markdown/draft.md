@@ -56,3 +56,10 @@ $$
 \iiint
 \prod
 $$
+$$
+0 \le\frac{n!}{n^n}\le{1 \over n} 
+$$
+$
+\{a_n\} \forall n \gets \to a_n\le a_{n+1}，\\
+\forall \epsilon >0 \exist n>N \Leftrightarrow
+$
